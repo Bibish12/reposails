@@ -1,28 +1,13 @@
 <nav class="navbar navbar-inverse">
-  <a class="navbar-brand" colspan="25" >Tutorial</a>
+  <a class="navbar-brand" colspan="25" >challenge</a>
 </nav>
 <div class="container" style="max-width:350px;" > 
 <h2>Estudiantes</H2>
 
 
-<form action="/estudiante/uploadFile" method="POST" accept-charset="utf-8" class="form-signin">
-
-
-<div style="align-items: center; justify-content: center;">
-		  
-		 <input type="file" name="avatar" class="btn btn-success">
-		</input>
-	</div>
-
-<br/>
-	<input type="submit" class="btn btn-success  btn-lg" />
-	<br/>
-	
-</form>
-
-<form action="/estudiante/create" method="POST" accept-charset="utf-8" class="form-signin">
-
-
+<form action="/estudiante/create" enctype="multipart/form-data" method="post">
+Imagen de perfil
+<input type="file" name="avatar" >
 <br/>
 <br/>
 nombre
