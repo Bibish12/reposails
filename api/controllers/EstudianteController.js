@@ -48,7 +48,7 @@ module.exports = {
 		
 		var params = {
 			    Bucket: BUCKET_NAME,
-			    Key: req.param('avatar'),
+			    Key: req.param('txtnombre'),
 			    Body: req.file('avatar')//fs.createReadStream(filePath),
 			 };
 
