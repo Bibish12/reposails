@@ -13,6 +13,10 @@ module.exports = {
 
 		// se guarda la imagen en bitbucket
 		const AWS = require('aws-sdk');
+		const fs = require('fs');
+		
+		const path = require('path');
+
 		const BUCKET_NAME = 'pruebasails';
 		const IAM_USER_KEY = 'AKIAJYOH6EKNWFPXMCFQ';
 		const IAM_USER_SECRET = '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';
@@ -24,11 +28,28 @@ module.exports = {
 		   Bucket: BUCKET_NAME,
 		   region: REGION
 		 });
+
+
+		/*req.file('avatar').upload({
+		  dirname: require('path').resolve(sails.config.appPath, 'assets/images')
+		},function (err, uploadedFiles) {
+		  if (err) return res.serverError(err);
+
+		  return res.json({
+		    message: uploadedFiles.length + ' file(s) uploaded successfully!'
+		  });
+		});*/
+
+
+		//const filePath = path.join(process.cwd(), '/images/assets/perfil.jpg');
+
+		//console.log(filePath);
+		res.setTimeout(0);
 		
 		var params = {
 			    Bucket: BUCKET_NAME,
-			    Key: req.param('txtnombre') + ".jpg",
-			    Body: req.file('avatar'),
+			    Key: req.param('avatar'),
+			    Body: req.file('avatar')//fs.createReadStream(filePath),
 			 };
 
 		s3bucket.upload(params, function (err, data) {
@@ -56,7 +77,7 @@ module.exports = {
 				}
 		});
 			
-		   
+	   
 	}
 
 		
