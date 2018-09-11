@@ -3,9 +3,42 @@
 </nav>
 <div class="container" style="max-width:350px;" > 
 <h2>Estudiantes</H2>
+
+
+<form action="/estudiante/uploadFile" method="POST" accept-charset="utf-8" class="form-signin">
+
+
+<div style="align-items: center; justify-content: center;">
+		  
+		 <input type="file" name="avatar" class="btn btn-success">
+		</input>
+	</div>
+
+<br/>
+	<input type="submit" class="btn btn-success  btn-lg" />
+	<br/>
+	
+</form>
+
 <form action="/estudiante/create" method="POST" accept-charset="utf-8" class="form-signin">
+
+
+<br/>
+<br/>
 nombre
 <input type="text" name="txtnombre" class="form-control" required>
+correo
+<input type="text" name="txtcorreo" class="form-control" required>
+carrera
+<select name="selcarrera" class="form-control" required>
+  <option value="Ing. en informatica">Ing. en informatica</option>
+  <option value="Lic. en informatica">Lic. en informatica</option>
+  <option value="Ing. en sistemas computacionales">Ing. en sistemas computacionales</option>
+  <option value="Lic. en telematica">Lic. en telematica</option>
+</select>
+telefono
+<input type="text" name="txttelefono" class="form-control" required>
+
 <br/>
 <input type="submit" class="btn btn-success  btn-lg" />
 </form>
